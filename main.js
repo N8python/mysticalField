@@ -176,7 +176,7 @@ function animate() {
     requestAnimationFrame(animate);
     const deltaTime = (Date.now() - prevFrameTime) / 1000;
     if (fox) {
-        if (keys["ArrowUp"]) {
+        if (keys["ArrowUp"] || keys["w"] || keys["W"]) {
             let mag = 1;
             /*const ay = Math.abs(fox.rotation.y) % (Math.PI * 2);
             if ((ay > Math.PI && ay < 3 * (Math.PI / 2)) ||
@@ -191,9 +191,9 @@ function animate() {
             anims.run.stop();
             anims.headShake.play();
         }
-        if (keys["ArrowRight"]) {
+        if (keys["ArrowRight"] || keys["d"] || keys["D"]) {
             fox.rotation.y += 0.1;
-        } else if (keys["ArrowLeft"]) {
+        } else if (keys["ArrowLeft"] || keys["a"] || keys["A"]) {
             fox.rotation.y -= 0.1;
         }
         camera.position.y = fox.position.y + 10;
